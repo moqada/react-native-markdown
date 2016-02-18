@@ -110,10 +110,10 @@ module.exports = function(styles) {
         var items = _.map(node.items, function(item, i) {
           var bullet;
           if (node.ordered) {
-            bullet = React.createElement(Text, { style: styles.listItemNumber  }, (i + 1) + '. ');
+            bullet = React.createElement(Text, { style: styles.listItemNumber, key: i  }, (i + 1) + '. ');
           }
           else {
-            bullet = React.createElement(Text, { style: styles.listItemBullet }, '\u2022 ');
+            bullet = React.createElement(Text, { style: styles.listItemBullet, key: i }, '\u2022 ');
           }
           return React.createElement(View, {
             key: i,
